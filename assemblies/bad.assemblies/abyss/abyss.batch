@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=2880GB
+#SBATCH -t 120:00:00
+#SBATCH --ntasks-per-node 60
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load boost/1.60.0
+module load mpi/pgi_openmpi
+module load abyss/1.9.0
+
+
+#move to working directory
+cp *.py $LOCAL
+cp map* $LOCAL
+cd $LOCAL
+
+#run python script
+python 3abyss.assembly.py --map mapfile

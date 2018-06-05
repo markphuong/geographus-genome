@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=960GB
+#SBATCH -t 200:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load bowtie/1.1.1
+module load perl/5.18.4-threads
+
+#move to working directory
+
+cp * /pylon5/bi4s86p/phuong/geographus.genome/0sspace
+cd /pylon5/bi4s86p/phuong/geographus.genome/0sspace
+
+#run python script
+
+perl /home/phuong/SSPACE-LongRead_v1-1/SSPACE-LongRead.pl -c genome.scf.fasta.NI.filtered -p longreads.fa -b geographus.genome.fa.v1 -t 20
+
+cp -rp * /pylon2/bi4s86p/phuong/geographus.genome/assemblies/0sspace

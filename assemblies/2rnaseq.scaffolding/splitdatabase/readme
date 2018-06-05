@@ -1,0 +1,12 @@
+cp scaffoldSeq.fasta ../../../2rnaseq.scaffolding/geographus.genome.v2.fa -- from 1opera.etc. 
+
+cp ../rnaseq/5clusterall/RESULTS/geographus.transcripts.clustered.fasta ./
+
+python reformat.fasta.py geographus.genome.v2.fa geographus.genome.v2.fixed.fa
+
+#####################
+
+
+[phuong@br006 splitdatabase]$ python makesomethingNotInterleaved.py geographus.transcripts.clustered.fasta geographus.transcripts.clustered.fasta.NI
+[phuong@br006 splitdatabase]$ python splitfiles.py geographus.transcripts.clustered.fasta.NI
+

@@ -1,0 +1,40 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=1152GB
+#SBATCH --ntasks-per-node 24
+#SBATCH -t 240:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+
+module load boost/1.60.0
+module load mpi/gcc_openmpi
+module load abyss/2.0.2
+
+
+
+abyss-sealer -v -P10 -k90 -j24 -b40G -i k90.bloom -o geographus.genome.v3.81.90.fasta -S geographus.genome.v3.81.fasta 
+
+abyss-sealer -v -P10 -k80 -j24 -b40G -i k80.bloom -o geographus.genome.v3.81.80.fasta -S geographus.genome.v3.81.90.fasta_scaffold.fa 
+
+abyss-sealer -v -P10 -k70 -j24 -b40G -i k70.bloom -o geographus.genome.v3.81.70.fasta -S geographus.genome.v3.81.80.fasta_scaffold.fa 
+
+abyss-sealer -v -P10 -k60 -j24 -b40G -i k60.bloom -o geographus.genome.v3.81.closed.fasta -S geographus.genome.v3.81.70.fasta_scaffold.fa 
+
+#abyss-sealer -v -k50 -j24 -b40G -i k50.bloom -o geographus.genome.v3.81.50.fasta -S geographus.genome.v3.81.60.fasta_scaffold.fa  
+
+#abyss-sealer -v -k40 -j24 -b40G -i k40.bloom -o geographus.genome.v3.81.40.fasta -S geographus.genome.v3.81.50.fasta_scaffold.fa  
+
+#abyss-sealer -v -k30 -j24 -b40G -i k30.bloom -o geographus.genome.v3.81.30.fasta -S geographus.genome.v3.81.40.fasta_scaffold.fa  
+
+#abyss-bloom build -v -k80 -j24 -b40G -l2 k80.bloom 10361X1.final1.fq.gz 10361X1.final2.fq.gz 10361X3.final1.fq.gz 10361X3.final2.fq.gz 11492X1.final1.fq.gz 11492X1.final2.fq.gz 11492X2.final1.fq.gz 11492X2.final2.fq.gz 11492X3.final1.fq.gz 11492X3.final2.fq.gz 11492X4.final1.fq.gz 11492X4.final2.fq.gz 11756X10.final1.fq.gz 11756X10.final2.fq.gz 11756X1.final1.fq.gz 11756X1.final2.fq.gz 11756X2.final1.fq.gz 11756X2.final2.fq.gz 11756X3.final1.fq.gz 11756X3.final2.fq.gz 11756X4.final1.fq.gz 11756X4.final2.fq.gz 11756X5.final1.fq.gz 11756X5.final2.fq.gz 11756X6.final1.fq.gz 11756X6.final2.fq.gz 11756X7.final1.fq.gz 11756X7.final2.fq.gz 11756X8.final1.fq.gz 11756X8.final2.fq.gz 11756X9.final1.fq.gz 11756X9.final2.fq.gz 9988X1.final1.fq.gz 9988X1.final2.fq.gz geographus.matepair.R1.fastq.gz geographus.matepair.R2.fastq.gz UU0018MY.final1.fq.gz UU0018MY.final2.fq.gz
+#abyss-bloom build -v -k70 -j24 -b40G -l2 k70.bloom 10361X1.final1.fq.gz 10361X1.final2.fq.gz 10361X3.final1.fq.gz 10361X3.final2.fq.gz 11492X1.final1.fq.gz 11492X1.final2.fq.gz 11492X2.final1.fq.gz 11492X2.final2.fq.gz 11492X3.final1.fq.gz 11492X3.final2.fq.gz 11492X4.final1.fq.gz 11492X4.final2.fq.gz 11756X10.final1.fq.gz 11756X10.final2.fq.gz 11756X1.final1.fq.gz 11756X1.final2.fq.gz 11756X2.final1.fq.gz 11756X2.final2.fq.gz 11756X3.final1.fq.gz 11756X3.final2.fq.gz 11756X4.final1.fq.gz 11756X4.final2.fq.gz 11756X5.final1.fq.gz 11756X5.final2.fq.gz 11756X6.final1.fq.gz 11756X6.final2.fq.gz 11756X7.final1.fq.gz 11756X7.final2.fq.gz 11756X8.final1.fq.gz 11756X8.final2.fq.gz 11756X9.final1.fq.gz 11756X9.final2.fq.gz 9988X1.final1.fq.gz 9988X1.final2.fq.gz geographus.matepair.R1.fastq.gz geographus.matepair.R2.fastq.gz UU0018MY.final1.fq.gz UU0018MY.final2.fq.gz
+#abyss-bloom build -v -k60 -j24 -b40G -l2 k60.bloom 10361X1.final1.fq.gz 10361X1.final2.fq.gz 10361X3.final1.fq.gz 10361X3.final2.fq.gz 11492X1.final1.fq.gz 11492X1.final2.fq.gz 11492X2.final1.fq.gz 11492X2.final2.fq.gz 11492X3.final1.fq.gz 11492X3.final2.fq.gz 11492X4.final1.fq.gz 11492X4.final2.fq.gz 11756X10.final1.fq.gz 11756X10.final2.fq.gz 11756X1.final1.fq.gz 11756X1.final2.fq.gz 11756X2.final1.fq.gz 11756X2.final2.fq.gz 11756X3.final1.fq.gz 11756X3.final2.fq.gz 11756X4.final1.fq.gz 11756X4.final2.fq.gz 11756X5.final1.fq.gz 11756X5.final2.fq.gz 11756X6.final1.fq.gz 11756X6.final2.fq.gz 11756X7.final1.fq.gz 11756X7.final2.fq.gz 11756X8.final1.fq.gz 11756X8.final2.fq.gz 11756X9.final1.fq.gz 11756X9.final2.fq.gz 9988X1.final1.fq.gz 9988X1.final2.fq.gz geographus.matepair.R1.fastq.gz geographus.matepair.R2.fastq.gz UU0018MY.final1.fq.gz UU0018MY.final2.fq.gz
+#abyss-bloom build -v -k50 -j24 -b40G -l2 k50.bloom 10361X1.final1.fq.gz 10361X1.final2.fq.gz 10361X3.final1.fq.gz 10361X3.final2.fq.gz 11492X1.final1.fq.gz 11492X1.final2.fq.gz 11492X2.final1.fq.gz 11492X2.final2.fq.gz 11492X3.final1.fq.gz 11492X3.final2.fq.gz 11492X4.final1.fq.gz 11492X4.final2.fq.gz 11756X10.final1.fq.gz 11756X10.final2.fq.gz 11756X1.final1.fq.gz 11756X1.final2.fq.gz 11756X2.final1.fq.gz 11756X2.final2.fq.gz 11756X3.final1.fq.gz 11756X3.final2.fq.gz 11756X4.final1.fq.gz 11756X4.final2.fq.gz 11756X5.final1.fq.gz 11756X5.final2.fq.gz 11756X6.final1.fq.gz 11756X6.final2.fq.gz 11756X7.final1.fq.gz 11756X7.final2.fq.gz 11756X8.final1.fq.gz 11756X8.final2.fq.gz 11756X9.final1.fq.gz 11756X9.final2.fq.gz 9988X1.final1.fq.gz 9988X1.final2.fq.gz geographus.matepair.R1.fastq.gz geographus.matepair.R2.fastq.gz UU0018MY.final1.fq.gz UU0018MY.final2.fq.gz
+#abyss-bloom build -v -k40 -j24 -b40G -l2 k40.bloom 10361X1.final1.fq.gz 10361X1.final2.fq.gz 10361X3.final1.fq.gz 10361X3.final2.fq.gz 11492X1.final1.fq.gz 11492X1.final2.fq.gz 11492X2.final1.fq.gz 11492X2.final2.fq.gz 11492X3.final1.fq.gz 11492X3.final2.fq.gz 11492X4.final1.fq.gz 11492X4.final2.fq.gz 11756X10.final1.fq.gz 11756X10.final2.fq.gz 11756X1.final1.fq.gz 11756X1.final2.fq.gz 11756X2.final1.fq.gz 11756X2.final2.fq.gz 11756X3.final1.fq.gz 11756X3.final2.fq.gz 11756X4.final1.fq.gz 11756X4.final2.fq.gz 11756X5.final1.fq.gz 11756X5.final2.fq.gz 11756X6.final1.fq.gz 11756X6.final2.fq.gz 11756X7.final1.fq.gz 11756X7.final2.fq.gz 11756X8.final1.fq.gz 11756X8.final2.fq.gz 11756X9.final1.fq.gz 11756X9.final2.fq.gz 9988X1.final1.fq.gz 9988X1.final2.fq.gz geographus.matepair.R1.fastq.gz geographus.matepair.R2.fastq.gz UU0018MY.final1.fq.gz UU0018MY.final2.fq.gz
+#abyss-bloom build -v -k30 -j24 -b40G -l2 k30.bloom 10361X1.final1.fq.gz 10361X1.final2.fq.gz 10361X3.final1.fq.gz 10361X3.final2.fq.gz 11492X1.final1.fq.gz 11492X1.final2.fq.gz 11492X2.final1.fq.gz 11492X2.final2.fq.gz 11492X3.final1.fq.gz 11492X3.final2.fq.gz 11492X4.final1.fq.gz 11492X4.final2.fq.gz 11756X10.final1.fq.gz 11756X10.final2.fq.gz 11756X1.final1.fq.gz 11756X1.final2.fq.gz 11756X2.final1.fq.gz 11756X2.final2.fq.gz 11756X3.final1.fq.gz 11756X3.final2.fq.gz 11756X4.final1.fq.gz 11756X4.final2.fq.gz 11756X5.final1.fq.gz 11756X5.final2.fq.gz 11756X6.final1.fq.gz 11756X6.final2.fq.gz 11756X7.final1.fq.gz 11756X7.final2.fq.gz 11756X8.final1.fq.gz 11756X8.final2.fq.gz 11756X9.final1.fq.gz 11756X9.final2.fq.gz 9988X1.final1.fq.gz 9988X1.final2.fq.gz geographus.matepair.R1.fastq.gz geographus.matepair.R2.fastq.gz UU0018MY.final1.fq.gz UU0018MY.final2.fq.gz
+
+#abyss-sealer -b20G -k90 -k80 -k70 -k60 -k50 -k40 -k30 -o geographus.genome.v3.1.testall.fasta -S geographus.genome.v3.81.fasta -j 24 10361X1.final1.fq 10361X1.final2.fq 10361X3.final1.fq 10361X3.final2.fq 9988X1.final1.fq 9988X1.final2.fq UU0018MY.final1.fq UU0018MY.final2.fq
+

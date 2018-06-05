@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=1824GB
+#SBATCH -t 10:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load python/2.7.11_gcc
+
+#move to working directory
+
+#run python script
+python 1rename.and.filter.py
+

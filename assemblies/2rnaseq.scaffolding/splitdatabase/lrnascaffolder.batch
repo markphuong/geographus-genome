@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=128GB
+#SBATCH -t 120:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+
+
+
+/home/phuong/L_RNA_scaffolder/L_RNA_scaffolder.sh -d /home/phuong/L_RNA_scaffolder -i geographus.blat.output.combined -j geographus.genome.v2.fixed.fa -o /pylon5/bi4s86p/phuong/geographus.genome/2rnaseq.scaffolding/splitdatabase/RESULTS/

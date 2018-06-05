@@ -1,0 +1,63 @@
+unitigger step failed. ran the following commands to fix it while masurca was running. Had to run these commands before the program ran consensus.sh, but after step 4-unitigger was done
+
+
+######### genome_003.err:MultiAlignUnitig()-- Unitig 108725 FAILED.  Could not align fragment 27417686.
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 3 -d layout -u 108725 > unitig108725
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 3 -T unitig108725 -V -V -V -v > out 2> stderr
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 3 -R unitig108725
+
+###### genome_005.err:MultiAlignUnitig()-- Unitig 185512 FAILED.  Could not align fragment 14238439.
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 5 -d layout -u 185512 > unitig185512
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 5 -T unitig185512 -V -V -V -v > out 2> stderr.185512
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 5 -R unitig185512
+
+##### genome_008.err:MultiAlignUnitig()-- Unitig 330365 FAILED.  Could not align fragment 18688611.
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 8 -d layout -u 330365 > unitig330365
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 8 -T unitig330365 -V -V -V -v > out 2> stderr.330365
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 8 -T unitig330365v2 -V -V -V -v > out 2> stderr.330365v2
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 8 -R unitig330365
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 8 -R unitig330365v2
+
+##### genome_022.err:MultiAlignUnitig()-- Unitig 1351599 FAILED.  Could not align fragment 17901331.
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 22 -d layout -u 1351599 > unitig1351599
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 22 -T unitig1351599 -V -V -V -v > out 2> stderr.1351599
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 22 -T unitig1351599v2 -V -V -V -v > out 2> stderr.1351599v2
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 22 -R unitig1351599
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 22 -R unitig1351599v2
+
+################ genome_120.err:MultiAlignUnitig()-- Unitig 142881676 FAILED.  Could not align fragment 21564703.
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 120 -d layout -u 142881676 > unitig142881676
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 120 -T unitig142881676 -V -V -V -v > out 2> stderr.142881676
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 120 -R unitig142881676
+
+
+############# genome_123.err:MultiAlignUnitig()-- Unitig 143047044 FAILED.  Could not align fragment 18478389.
+
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 123 -d layout -u 143047044 > unitig143047044
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 123 -T unitig143047044 -V -V -V -v > out 2> stderr.143047044
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/utgcns -g ../genome.gkpStore -t ../genome.tigStore 1 123 -T unitig143047044v2 -V -V -V -v > out 2> stderr.143047044v2
+
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 123 -R unitig143047044
+/opt/packages/masurca/3.2.2/CA/Linux-amd64/bin/tigStore -g ../genome.gkpStore -t ../genome.tigStore/ 1 -up 123 -R unitig143047044v2
+
+
+

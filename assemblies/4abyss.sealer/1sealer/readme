@@ -1,0 +1,2 @@
+python split.geographusgenome.py #split genome into 5000 seqs per file
+
