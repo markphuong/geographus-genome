@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=960GB
+#SBATCH -t 24:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load python/2.7.11_gcc
+module load perl/5.18.4-threads
+module load gcc/5.3.0
+module load cd-hit/2016.06.21
+
+#move to working directory
+cp * $LOCAL
+cd $LOCAL
+
+
+#run python script
+
+python cap3Wrapper.py
