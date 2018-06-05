@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=960GB
+#SBATCH -t 12:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load bowtie/1.1.1
+module load perl/5.18.4-threads
+
+#move to working directory
+cp *.py $LOCAL
+cp map* $LOCAL
+cd $LOCAL
+
+#run python script
+python scaffolding.py --map mapfile5
+

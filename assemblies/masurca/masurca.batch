@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=2880GB
+#SBATCH -t 336:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load gcc/5.3.0
+module load perl/5.18.4-threads
+module load masurca/3.2.2
+
+
+./assemble.sh
+

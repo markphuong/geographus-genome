@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=576GB
+#SBATCH -t 96:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load python/2.7.11_gcc
+module load perl/5.18.4-threads
+module load java7/jdk7u80
+module load bowtie/1.1.2
+module load samtools/0.1.19
+module load trinity/2.1.1
+
+
+cp map* $LOCAL
+cp *.py $LOCAL
+
+cd $LOCAL
+
+
+#move to working directory
+
+#run python script
+
+python trinityWrapper.py --map mapfile2

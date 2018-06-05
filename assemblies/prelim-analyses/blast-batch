@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=960GB
+#SBATCH -t 240:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+
+module load blast
+
+makeblastdb -dbtype nucl -in all-seqs-conotoxin-ref.fa
+
+blastn -query geographus.genome.v3.fasta -db all-seqs-conotoxin-ref.fa -outfmt 6 -out test -evalue 1e-10 -num_threads 20
+
+#export PATH=/home/phuong/augustus/bin:$PATH
+#export PATH=/home/phuong/augustus/scripts:$PATH
+#export AUGUSTUS_CONFIG_PATH=/home/phuong/augustus/config
+#python /home/phuong/busco/scripts/run_BUSCO.py -i geographus.genome.v3.fasta -o geographus.busco -l metazoa_odb9 -m geno -c 24
+
+

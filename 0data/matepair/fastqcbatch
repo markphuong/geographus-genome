@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=128GB
+#SBATCH -t 24:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module load fastqc/0.11.3
+
+
+fastqc 11308X4_150129_D00294_0156_AC6E82ANXX_3_1.ad_trimmed.gz

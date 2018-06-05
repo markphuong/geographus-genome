@@ -1,0 +1,34 @@
+################
+
+python grab100fosmid.py
+-- need to grab first and last 100 bp of the fosmid vector for trimming in trimmomatric. also takes into account reverse complement
+
+
+requires:
+1. fosmid.vector.fa
+
+creates:
+
+1. fosmid.trimmed.fa
+
+###############################
+
+cat adapters_caeno_7_8_2016.fa fosmid.trimmed.fa > adapters.fosmid.fa
+
+-- general adapter and fosmid files for trimming in trimmomatic
+-- have to remove newline after concatenation
+
+#########################
+
+python grabtrim.py
+
+takes 14 bp of the fosmid vector (which only consists of the first and last 100 bp of the vector as these are the regions most likely to be ligated)
+and 14bp of both the p5 and p7 adapter
+also accounts for the reverse complement
+
+first does bbmap to remove contaminants
+trims using cutadapt and trimmomatic
+and merge reads using flash
+
+
+

@@ -1,0 +1,21 @@
+scaffold_290
+
+superfamily A
+
+arranged as: 
+
+signal -- mature1 -- mature2
+
+mature1 can be found on other scaffolds and is expressed
+mature 2 is not expressed and is only found on this scaffold
+
+
+scaffold_7272
+
+superfamily O1
+
+arranged as:
+
+mature1 -- mature2 -- mature3
+
+These three conotoxins are not expressed, but share similar UTR to other O1 conotoxins..

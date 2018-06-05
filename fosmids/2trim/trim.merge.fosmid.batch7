@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -p LM
+#SBATCH --mem=576GB
+#SBATCH -t 48:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=markphuong@gmail.com
+
+#echo commands to stdout
+
+module unload python
+module load java/jdk8u73
+module load trimmomatic/0.36
+
+#move to working directory
+cp *.py $LOCAL
+cp map* $LOCAL
+cp *.fa $LOCAL
+cd $LOCAL
+
+#run python script
+python 1cleanreads_fosmid.py --map mapfile7

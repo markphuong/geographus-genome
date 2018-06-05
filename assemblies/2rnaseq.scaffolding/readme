@@ -1,0 +1,5 @@
+cp scaffoldSeq.fasta ../../../2rnaseq.scaffolding/geographus.genome.v2.fa -- from 1opera.etc. 
+
+cp ../rnaseq/5clusterall/RESULTS/geographus.transcripts.clustered.fasta ./
+
+python reformat.fasta.py geographus.genome.v2.fa geographus.genome.v2.fixed.fa
